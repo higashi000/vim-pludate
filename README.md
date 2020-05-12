@@ -15,6 +15,7 @@ call dein#add('higashi000/vim-pludate')
 ```
 
 # Usage
+## Set config file
 Please set your vim-pludate config directory.(default `$HOME/.vim/`)<br>
 
 Add to vimrc.<br>
@@ -31,6 +32,24 @@ After, make `pludateConfig.json` in your pludate config path.<br>
 ```
 $ touch `YOUR_PLUDATE_CONFIG_PATH/pludateConfig.json`
 ```
+
+## Set update command
+```
+let g:pludateUpdateCmd = 'YOUR_PLUGIN_UPDATE_COMMAND'
+```
+
+for vim-plug<br>
+```
+let g:pludateUpdateCmd = ':PlugUpdate'
+```
+
+for dein.vim<br>
+```
+command UpdatePlugin call dein#update()
+let g:pludateUpdateCmd = ':UpdatePlugin'
+```
+
+## Change update interval
 
 Default update interval is one week.<br>
 If you want to change update interval, Please set `let g:pludateInterval`.<br>
